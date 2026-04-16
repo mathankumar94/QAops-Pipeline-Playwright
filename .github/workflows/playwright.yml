@@ -40,7 +40,7 @@ jobs:
 
       with:
 
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        creds: ${{ secrets.AZURE_CRED }}
 
     - name: Run Playwright tests
 

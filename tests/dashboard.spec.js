@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
-const { LoginPage }     = require('../pages/LoginPage');
+const { LoginPage } = require('../pages/LoginPage');
 const { DashboardPage } = require('../pages/DashboardPage');
-const { Users }         = require('../testData/users');
+const { Users } = require('../testData/users');
 
 test.describe('Dashboard Page', () => {
   let dashboardPage;
@@ -23,7 +23,7 @@ test.describe('Dashboard Page', () => {
     expect(count).toBe(6);
   });
 
-  test('should display product list', async ({ page }) => {
+  test('should display product list', async () => {
     await expect(dashboardPage.productList).toBeVisible();
     await expect(dashboardPage.inventoryItems.first()).toBeVisible();
   });

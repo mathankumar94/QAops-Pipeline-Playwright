@@ -1,6 +1,6 @@
 const { defineConfig } = require('@playwright/test');
 const { createAzurePlaywrightConfig, ServiceOS } = require('@azure/playwright');
-const { DefaultAzureCredential, WorkloadIdentityCredential } = require('@azure/identity');
+const { DefaultAzureCredential } = require('@azure/identity');
 const config = require('./playwright.config');
 
 /* Learn more about service configuration at https://aka.ms/pww/docs/config */
@@ -13,9 +13,6 @@ module.exports = defineConfig(
     credential: new DefaultAzureCredential(),
   }),
   {
-    reporter: [
-      ["html", { open: "never" }],
-      ["@azure/playwright/reporter"],
-    ],
+    reporter: [['html', { open: 'never' }], ['@azure/playwright/reporter']],
   }
 );

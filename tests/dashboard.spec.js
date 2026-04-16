@@ -1,6 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const { LoginPage }     = require('../pages/LoginPage');
 const { DashboardPage } = require('../pages/DashboardPage');
+const { Users }         = require('../testData/users');
 
 test.describe('Dashboard Page', () => {
   let dashboardPage;
@@ -8,7 +9,7 @@ test.describe('Dashboard Page', () => {
   test.beforeEach(async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.goto();
-    await loginPage.login('standard_user', 'secret_sauce');
+    await loginPage.login(Users.standard.username, Users.standard.password);
     dashboardPage = new DashboardPage(page);
   });
 

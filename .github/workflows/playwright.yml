@@ -37,6 +37,11 @@ jobs:
           AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
           AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
           AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          STANDARD_USER: ${{ secrets.STANDARD_USER }}
+          STANDARD_PASSWORD: ${{ secrets.STANDARD_PASSWORD }}
+          LOCKED_USER: ${{ secrets.LOCKED_USER }}
+          INVALID_USER: ${{ secrets.INVALID_USER }}
+          INVALID_PASSWORD: ${{ secrets.INVALID_PASSWORD }}
         run: npx playwright test --config=playwright.service.config.js --workers=4
 
       - name: Upload test report

@@ -7,7 +7,17 @@
     "test:login": "npx playwright test tests/login.spec.js",
     "test:dashboard": "npx playwright test tests/dashboard.spec.js",
     "test:headed": "npx playwright test --headed",
-    "report": "npx playwright show-report"
+    "report": "npx playwright show-report",
+    "prepare": "husky",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write ."
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --max-warnings=0",
+      "prettier --write"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -16,7 +26,14 @@
   "devDependencies": {
     "@azure/identity": "^4.13.1",
     "@azure/playwright": "^1.1.4",
-    "@playwright/test": "^1.59.1"
+    "@playwright/test": "^1.59.1",
+    "eslint": "^10.2.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-formatter-html": "^2.7.3",
+    "eslint-plugin-playwright": "^2.10.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.3"
   },
   "dependencies": {
     "dotenv": "^17.4.2"
